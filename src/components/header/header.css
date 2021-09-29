@@ -1,0 +1,27 @@
+.header {
+    width: 100%;
+    border-bottom: 2px solid red;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+
+.header .title {
+    font-weight: 700;
+    font-size: 24px;
+    flex-grow: 1;
+}
+
+.header .search {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header .search input {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+}

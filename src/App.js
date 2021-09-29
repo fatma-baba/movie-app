@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import { Container } from '@mui/material';
+import Header from './components/header/header';
 import './App.css';
+import { useEffect, useState } from 'react';
+import Home from './components/home/home'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  Link,
+  useParams
+} from "react-router-dom";
+import Movie from './components/movie/movie'
 
 function App() {
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="md">
+      <Router>
+      <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/movie">
+            <Movie />
+          </Route>
+          <Route path="/">
+            <Redirect to='/home'/>
+          </Route>
+        </Switch>
+      </Router>
+    </Container>
   );
 }
 
